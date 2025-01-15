@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import { NavBar } from "./components/nav-bar.component";
 
 
 // FunnelSans
@@ -33,6 +34,7 @@ export default function RootLayout ( {
       <body
         className={ `${ funnelSans.variable } ${ jetBrainsMono.variable } antialiased font-sans` }
       >
+        <NavBar />
         { children }
       </body>
     </html>
