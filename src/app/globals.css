@@ -3,7 +3,8 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
+  /* --background: #ffffff; */
+  background-color: rgb(39 39 42 / var(--tw-bg-opacity, 1));
   --foreground: #171717;
 }
 
@@ -24,4 +25,31 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+.bg-mesh {
+  background-color: hsla(0, 0%, 100%, 1);
+  background-image: radial-gradient(
+      at 30% 0%,
+      hsla(166, 80%, 93%, 1) 0px,
+      transparent 50%
+    ),
+    radial-gradient(at 83% 19%, hsla(240, 81%, 85%, 1) 0px, transparent 50%),
+    radial-gradient(at 2% 73%, hsla(22, 97%, 61%, 1) 0px, transparent 50%),
+    radial-gradient(at 40% 20%, hsla(28, 100%, 74%, 1) 0px, transparent 50%),
+    radial-gradient(at 87% 31%, hsla(1, 100%, 80%, 1) 0px, transparent 50%);
+}
+
+.page-bg {
+  position: relative;
+  background-color: hsla(0, 0%, 100%, 1);
+  background-image: radial-gradient(
+      at 30% 0%,
+      hsla(166, 80%, 93%, 1) 0px,
+      transparent 50%
+    ),
+    radial-gradient(at 83% 19%, rgb(230, 230, 252) 0px, transparent 50%),
+    radial-gradient(at 2% 73%, rgb(249, 198, 169) 0px, transparent 50%),
+    radial-gradient(at 40% 20%, hsla(28, 100%, 74%, 1) 0px, transparent 50%),
+    radial-gradient(at 87% 31%, hsla(1, 100%, 80%, 1) 0px, transparent 50%);
 }
