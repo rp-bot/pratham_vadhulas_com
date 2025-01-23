@@ -30,10 +30,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${funnelSans.variable} ${jetBrainsMono.variable} antialiased font-sans page-bg min-h-screen h-full  flex flex-col items-center justify-between `}
+        className={`${funnelSans.variable} ${jetBrainsMono.variable} antialiased font-sans page-bg min-h-screen h-full  flex flex-col items-center justify-between w-full`}
       >
         <NavBar />
-        <div className="h-full flex-grow">{children}</div>
+        <div className="h-full flex-grow w-full">{children}</div>
         <Footer />
       </body>
     </html>

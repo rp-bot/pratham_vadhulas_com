@@ -1,18 +1,9 @@
-"use client";
-
-interface Props {
-  params: {
-    id: string;
-  };
-}
-
-export default function PortfolioPage({ params }: Props) {
-  const { id } = params;
-
+export default function PortfolioPage() {
   return (
     <>
-      <h1>Page {id}</h1>
-      <p>Page content</p>
+      <div className="text-black">
+        <h1>My Website Portfolio</h1>
+      </div>
     </>
   );
 }
