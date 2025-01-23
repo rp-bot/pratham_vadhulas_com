@@ -1,23 +1,23 @@
-import ReposList from "./repos-list.component";
+import { getRepos } from "../actions/getProjects";
+// import ReposList from "./repos-list.component";
+
+const username = "rp-bot"; // Replace with your GitHub username
+const INITIAL_NUMBER_OF_USERS = 10;
 
 export default async function ProjectsPage() {
-  const username = "rp-bot"; // Replace with your GitHub username
-  const res = await fetch(
-    `https://api.github.com/users/${username}/repos?sort=updated&page=1&per_page=10`,
-    { next: { revalidate: 60 } }, // Revalidate every 60 seconds
-  );
+  try {
+    const initialRepos = await getRepos(username, INITIAL_NUMBER_OF_USERS);
 
-  if (!res.ok) {
-    throw new Error("Failed to fetch repositories");
+    console.log(typeof initialRepos[0]);
+  } catch (e) {
+    console.error(e);
   }
 
-  const repos = await res.json();
-
   return (
-    <div className="container mx-auto p-4">
+    <div className=" mx-auto p-4 max-w-screen-lg w-full">
       <h1 className="text-2xl font-bold mb-4">My Public Repositories</h1>
       {/* Pass the fetched repositories to the client component */}
-      <ReposList initialRepos={repos} />
+      {/* <ReposList initialRepos={repos} /> */}
     </div>
   );
 }

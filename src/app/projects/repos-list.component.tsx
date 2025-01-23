@@ -2,14 +2,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-
-interface Repo {
-  id: number;
-  name: string;
-  html_url: string;
-  description: string | null;
-  updated_at: string;
-}
+import { Repo } from "@/app/types/Repo";
 
 interface ReposListProps {
   initialRepos: Repo[];
@@ -62,10 +55,11 @@ export default function ReposList({ initialRepos }: ReposListProps) {
         observer.current.unobserve(lastRepoElement);
       }
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [repos]);
 
   return (
-    <div>
+    <div className="max-w-screen-lg w-full bg-zinc-500 ">
       <ul>
         {repos.map((repo) => (
           <li key={repo.id} className="mb-4 border-b pb-4">
@@ -88,10 +82,7 @@ export default function ReposList({ initialRepos }: ReposListProps) {
       </ul>
 
       {/* Loading Spinner */}
-      <div
-        id="load-more-trigger"
-        className={`flex justify-center mt-4 ${loading ? "animate-spin" : ""}`}
-      >
+      <div id="load-more-trigger" className={`flex justify-center mt-4 `}>
         {loading && (
           <div className="flex items-center justify-center space-x-2">
             <div className="w-6 h-6 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
