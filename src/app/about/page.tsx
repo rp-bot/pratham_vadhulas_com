@@ -2,7 +2,7 @@
 
 import { AnimatedWrapper } from "../components/animated-wrapper.component";
 import { Button } from "../components/button.component";
-import { motion } from "framer-motion";
+// import { motion } from "framer-motion";
 
 const timelineEvents = [
   {
@@ -42,11 +42,11 @@ export default function About() {
           <h1 className="text-4xl font-bold text-gray-900 mb-6">About Me</h1>
           <div className="prose prose-lg max-w-3xl">
             <p className="text-gray-600">
-              I'm a software engineer and music technologist passionate about creating innovative solutions at the intersection of technology and sound. My work
+              I&apos;m a software engineer and music technologist passionate about creating innovative solutions at the intersection of technology and sound. My work
               combines technical expertise in software development with a deep understanding of music theory and audio processing.
             </p>
             <p className="text-gray-600 mt-4">
-              With a background in both computer science and music technology, I bring a unique perspective to projects that bridge these two worlds. I'm
+              With a background in both computer science and music technology, I bring a unique perspective to projects that bridge these two worlds. I&apos;m
               particularly interested in developing tools that make music creation and audio processing more accessible and intuitive.
             </p>
           </div>

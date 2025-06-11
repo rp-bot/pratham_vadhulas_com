@@ -1,9 +1,8 @@
 "use client";
-import { FaHome, FaProjectDiagram, FaInfoCircle, FaEnvelope, FaBars, FaTimes, FaFolderOpen } from "react-icons/fa";
+import { FaHome, FaProjectDiagram, FaBars, FaTimes, FaFolderOpen } from "react-icons/fa";
 import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { motion } from "framer-motion";
 
 const navItems = [
   { name: "Home", path: "/" },
