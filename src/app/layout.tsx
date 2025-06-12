@@ -29,10 +29,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${funnelSans.variable} ${jetBrainsMono.variable}`}>
-      <body className="min-h-screen bg-white text-gray-900 antialiased">
+      <body className="min-h-screen bg-white text-gray-900 antialiased font-mono">
         <div className="flex min-h-screen flex-col">
           <NavBar />
-          <main className="flex-1">{children}</main>
+          <main className="flex-1 home_background">{children}</main>
           <Footer />
         </div>
       </body>
