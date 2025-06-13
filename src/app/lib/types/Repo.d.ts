@@ -1,3 +1,5 @@
+// src/app/lib/types/Repo.d.ts
+
 export type Repo = {
     id: number;
     name: string;
@@ -16,8 +18,14 @@ export type Repo = {
     created_at: string;
     updated_at: string;
     pushed_at: string;
+    // Add the new field for latest commit information
+    latestCommit?: {
+        hash: string;
+        date: string;
+    };
 };
 
+// No changes are needed for the GitHubRepo interface
 export interface GitHubRepo
 {
     id: number;
