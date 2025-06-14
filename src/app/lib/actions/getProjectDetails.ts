@@ -8,6 +8,7 @@ import matter from "gray-matter";
 export interface ProjectData {
   slug: string;
   title: string;
+  emoji?: string;
   description: string;
   content: string;
   role?: string;
@@ -46,6 +47,7 @@ export const getProjectDetails = async (
     return {
       slug,
       title: data.title || slug, // Fallback to slug if title is missing
+      emoji: data.emoji || "",
       description: data.description || "",
       content,
       role: data.role,

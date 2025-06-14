@@ -2,9 +2,8 @@ import Image from "next/image";
 import ReactMarkdown from "react-markdown";
 import { getProjectDetails } from "../../lib/actions/getProjectDetails";
 import { AnimatedWrapper } from "../../components/animated-wrapper.component";
-// If you use icons from a library, you might need these imports
-// import { FaGithub } from "react-icons/fa";
-// import { ArrowUpRight } from "lucide-react";
+import Link from "next/link";
+import { ArrowUpRight } from "lucide-react";
 
 export default async function ProjectPage({ params }: { params: { slug: string } }) {
   // The username is no longer needed. We just pass the slug.
@@ -25,19 +24,26 @@ export default async function ProjectPage({ params }: { params: { slug: string }
 
   return (
     <main className="min-h-screen pt-16">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 bg-white">
         {/* Project Header */}
         <AnimatedWrapper className="mb-16">
-          <h1 className="text-4xl font-bold text-gray-900 mb-6">{project.title}</h1>
+          <h1 className="text-4xl font-bold text-gray-900 mb-6">
+            {project.emoji && <span className="mr-3">{project.emoji}</span>}
+            {project.title}
+          </h1>
           <p className="text-xl text-gray-600 max-w-3xl">{project.description}</p>
           
           {/* Un-comment and style these buttons as you see fit */}
           <div className="flex flex-wrap gap-4 mt-8">
             {project.githubUrl && (
-              <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="/* your primary button styles */">
-                {/* <FaGithub className="w-5 h-5 mr-2" /> */}
-                View on GitHub
-              </a>
+              <Link 
+                href={project.githubUrl} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="inline-flex items-center px-4 py-2 rounded-full bg-gray-900 text-white hover:bg-gray-800 transition-colors"
+              >
+                View More <ArrowUpRight className="w-4 h-4 ml-2" />
+              </Link>
             )}
             {project.liveUrl && (
                <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="/* your secondary button styles */">
