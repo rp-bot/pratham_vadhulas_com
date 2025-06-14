@@ -8,7 +8,7 @@ const allProjects = [
     title: "Audio Visualizer",
     description: "A real-time audio visualization tool built with Web Audio API and Canvas.",
     tags: ["Web Audio API", "Canvas", "JavaScript"],
-    slug: "audio-visualizer",
+    slug: "MIDI-gen-ai",
   },
   {
     title: "Music Production App",

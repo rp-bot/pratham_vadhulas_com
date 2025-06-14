@@ -1,24 +1,26 @@
 "use client";
-import { FaHome, FaProjectDiagram, FaBars, FaTimes, FaFolderOpen } from "react-icons/fa";
+import { FaHome, FaProjectDiagram, FaBars, FaTimes, FaUser } from "react-icons/fa";
 import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 const navItems = [
-  { name: "Home", path: "/" },
-  { name: "Projects", path: "/projects" },
-  { name: "About", path: "/about" },
+  { name: "Home", path: "/", icon: <FaHome /> },
+  { name: "Projects", path: "/projects", icon: <FaProjectDiagram /> },
+  { name: "About", path: "/about", icon: <FaUser /> },
 ];
 
 export function NavBar() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [moreInfoMenu, setMoreInfoMenu] = useState(false);
   const pathname = usePathname();
 
   return (
-    <header className="  flex flex-row items-center justify-evenly w-full ">
-      <div className="md:hidden self-start w-full p-3  ">
-        <button onClick={() => setMenuOpen(!menuOpen)} className="text-white bg-gray-500 p-2 rounded">
+    <header className="flex flex-row items-center justify-evenly w-full">
+      <div className="md:hidden self-start w-full p-3">
+        <button
+          onClick={() => setMenuOpen(!menuOpen)}
+          className="text-white bg-gray-500 p-2 rounded"
+        >
           {menuOpen ? <FaTimes /> : <FaBars />}
         </button>
       </div>
@@ -36,8 +38,11 @@ export function NavBar() {
                 key={item.path}
                 href={item.path}
                 onClick={() => setMenuOpen(false)}
-                className={`text-white flex items-center space-x-2 hover:text-gray-400 ${isActive ? "font-bold" : ""}`}
+                className={`text-white flex items-center space-x-2 hover:text-gray-400 ${
+                  isActive ? "font-bold" : ""
+                }`}
               >
+                {item.icon}
                 {item.name}
               </Link>
             );
@@ -45,43 +50,30 @@ export function NavBar() {
         </div>
       </nav>
       {/* Desktop */}
-      <nav className=" md:flex flex-row items-center justify-evenly w-full hidden bg-zinc-800  ">
+      <nav className="md:flex flex-row items-center justify-evenly w-full hidden bg-zinc-800">
         <div>
-          <Link href="/" className="text-white flex items-center space-x-1 p-3 hover:bg-gray-400">
+          <Link
+            href="/"
+            className="text-white flex items-center space-x-1 p-3 hover:bg-gray-400"
+          >
             <FaHome /> <span>Home</span>
           </Link>
         </div>
         <div>
-          <Link href="/projects" className="text-white flex items-center space-x-1 p-3 hover:bg-gray-400">
+          <Link
+            href="/projects"
+            className="text-white flex items-center space-x-1 p-3 hover:bg-gray-400"
+          >
             <FaProjectDiagram /> <span>Projects</span>
           </Link>
         </div>
         <div>
-          <Link href="/portfolio" className="text-white flex items-center space-x-1 p-3 hover:bg-gray-400">
-            <FaFolderOpen /> <span>Portfolio</span>
+          <Link
+            href="/about"
+            className="text-white flex items-center space-x-1 p-3 hover:bg-gray-400"
+          >
+            <FaUser /> <span>About</span>
           </Link>
-        </div>
-        <div className={`relative  ${moreInfoMenu ? "bg-gray-400" : "hover:bg-gray-400"}`}>
-          <button onClick={() => setMoreInfoMenu(!moreInfoMenu)} className="text-white flex items-center space-x-1 p-3">
-            <FaBars /> <span>More</span>
-          </button>
-          {moreInfoMenu && (
-            <div className="absolute bg-zinc-800 p-2 mt-2 rounded shadow-lg w-fit text-nowrap flex flex-col items-start justify-evenly">
-              {navItems.map((item) => {
-                const isActive = pathname === item.path;
-                return (
-                  <Link
-                    key={item.path}
-                    href={item.path}
-                    onClick={() => setMoreInfoMenu(!moreInfoMenu)}
-                    className={`text-white flex items-center space-x-1  p-2 w-full hover:bg-zinc-400 ${isActive ? "font-bold" : ""}`}
-                  >
-                    {item.name}
-                  </Link>
-                );
-              })}
-            </div>
-          )}
         </div>
       </nav>
     </header>

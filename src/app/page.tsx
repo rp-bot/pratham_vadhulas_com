@@ -1,53 +1,18 @@
-"use client";
+// "use client";
 
 import { AnimatedWrapper } from "./components/animated-wrapper.component";
 import { ProjectCard } from "./components/project-card.component";
-
-const featuredProjects = [
-  {
-    title: "Audio Visualizer",
-    description: "A real-time audio visualization tool built with Web Audio API and Canvas.",
-    tags: ["Web Audio API", "Canvas", "JavaScript"],
-    slug: "audio-visualizer",
-  },
-  {
-    title: "Music Production App",
-    description: "A web-based digital audio workstation for music production.",
-    tags: ["React", "Web Audio API", "TypeScript"],
-    slug: "music-production-app",
-  },
-  {
-    title: "Algorithmic Composition",
-    description: "An experimental tool for generating music using algorithmic patterns.",
-    tags: ["Python", "Music Theory", "Machine Learning"],
-    slug: "algorithmic-composition",
-  },
-  // Add more projects as needed
-];
+import { ProfileSection } from "./components/profile-section.component";
+import { featuredProjects } from "@/constants/featured_projects";
 
 export default function Home() {
   return (
-    <main className="min-h-screen p-10 ">
-      {/* Hero Section */}
-      <section className="relative py-20 overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <AnimatedWrapper className="text-center">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 mb-6 bg-white">
-              Building Digital Experiences,
-              <br />
-              Composing Sonic Worlds
-            </h1>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              A software engineer with a background in computer science and a passion for the art of sound. I create clean code and compelling audio-visual
-              applications.
-            </p>
-          </AnimatedWrapper>
-        </div>
-      </section>
+    <main className="min-h-screen ">
+      <ProfileSection />
 
       {/* Featured Projects Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-10 bg-gray-50">
+        <div className="max-w-7xl mx-auto lg:px-8">
           <AnimatedWrapper className="mb-12">
             <h2 className="text-3xl font-bold text-gray-900 text-center">Featured Projects</h2>
           </AnimatedWrapper>
@@ -58,6 +23,15 @@ export default function Home() {
                 <ProjectCard {...project} />
               </AnimatedWrapper>
             ))}
+          </div>
+
+          <div className="mt-12 text-center">
+            <a 
+              href="/projects" 
+              className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 transition-colors"
+            >
+              See All Projects
+            </a>
           </div>
         </div>
       </section>

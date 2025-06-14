@@ -53,3 +53,25 @@ body {
     radial-gradient(at 40% 20%, hsla(28, 100%, 74%, 1) 0px, transparent 50%),
     radial-gradient(at 87% 31%, hsla(1, 100%, 80%, 1) 0px, transparent 50%);
 }
+
+.home_background {
+  /* height: 100; */
+  background-image: radial-gradient(#000000 1px, transparent 1px);
+  background-size: 40px 40px;
+  background-color: rgb(228 228 231);
+  /* z-index: -20; */
+}
+
+.background_2 {
+  /* height: 100; */
+  background-image: radial-gradient(rgb(228 228 231) 1px, transparent 1px);
+  background-size: 40px 40px;
+  background-color: #484848;
+  /* z-index: -20; */
+}
+
+::selection {
+  color: #000000;
+  background: #ffff80;
+  text-shadow: none;
+}
