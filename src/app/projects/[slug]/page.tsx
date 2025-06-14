@@ -1,18 +1,14 @@
 // src/app/projects/[slug]/page.tsx
-
-import { ArrowUpRight } from "lucide-react";
 import Image from "next/image";
 import ReactMarkdown from "react-markdown"; // Import ReactMarkdown
 import { getProjectDetails } from "../../lib/actions/getProjectDetails";
 import { AnimatedWrapper } from "../../components/animated-wrapper.component";
-import { Button } from "../../components/button.component";
-import { FaGithub } from "react-icons/fa";
+
 
 export default async function ProjectPage({ params }: { params: { slug: string } }) {
   // Replace with your GitHub username
   const username = "rp-bot";
   const project = await getProjectDetails(username, params.slug);
-  console.log(project);
   if (!project) {
     return (
       <main className="min-h-screen pt-16">
@@ -29,7 +25,7 @@ export default async function ProjectPage({ params }: { params: { slug: string }
   // Extract front matter and content for easier access
   const { repo, readme } = project;
   const frontmatter = readme.data;
-
+  // console.log(frontmatter);
   return (
     <main className="min-h-screen pt-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
