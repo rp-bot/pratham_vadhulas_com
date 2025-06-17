@@ -8,9 +8,9 @@ duration: "Jan 2025 - May 2025"
 # liveUrl: "https://example.com"
 githubUrl: "https://github.com/rp-bot/voice-percussion-transcription"
 technologies: ["Python", "scikit-learn", "librosa"]
-images: 
-  # - "/images/projects/awesome-project-hero.png"
-  # - "/images/projects/awesome-project-gallery-1.jpg"
+images:
+  - "/images/vpt_model_arch.png"
+  - "/images/vpt_novelty_function.png"
   # - "/images/projects/awesome-project-gallery-2.jpg"
 ---
 
@@ -29,6 +29,7 @@ We implemented and compared several machine learning approaches:
 - **Hybrid Approach:** Combining traditional features with neural networks
 
 Key findings showed that:
+
 - The CNN model achieved the highest accuracy (92%) for isolated sounds
 - LSTM performed better for continuous sequences
 - Traditional ML models were more computationally efficient
@@ -38,4 +39,3 @@ Key findings showed that:
 - **Feature Extraction:** Used librosa for MFCCs, spectral features, and temporal characteristics
 - **Data Processing:** Implemented custom augmentation techniques for limited training data
 - **Model Training:** Utilized scikit-learn for traditional ML and TensorFlow for deep learning models
-

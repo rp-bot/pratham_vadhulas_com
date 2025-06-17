@@ -25,32 +25,32 @@ export const featuredProjects = [
             },
         ],
     },
-    {
-        title: "Audio File Sharing For Mixing Engineers",
-        description:
-            "A web-based platform tailored for audio professionals to share, comment on, and manage different versions of audio files during the mixing and mastering process. Key features would include lossless audio streaming and time-stamped feedback.",
-        tags: [ "Web Application", "React", "Node.js", "AWS S3" ],
-        slug: "audio-file-sharing",
-        links: [
-            {
-                siteName: "GitHub",
-                url: "https://github.com/rp-bot/audio-file-sharing",
-            },
-        ],
-    },
-    {
-        title: "Employee & Project Management Full Stack App",
-        description:
-            "A robust full-stack application designed to streamline workflow by managing employees, projects, and tasks. This comprehensive tool would feature user authentication, role-based access control, and an intuitive dashboard for project tracking.",
-        tags: [ "Full Stack", "React", "Node.js", "PostgreSQL" ],
-        slug: "employee-project-management-app",
-        links: [
-            {
-                siteName: "GitHub",
-                url: "https://github.com/rp-bot/employee-project-management-app",
-            },
-        ],
-    },
+    // {
+    //     title: "Audio File Sharing For Mixing Engineers",
+    //     description:
+    //         "A web-based platform tailored for audio professionals to share, comment on, and manage different versions of audio files during the mixing and mastering process. Key features would include lossless audio streaming and time-stamped feedback.",
+    //     tags: [ "Web Application", "React", "Node.js", "AWS S3" ],
+    //     slug: "audio-file-sharing",
+    //     links: [
+    //         {
+    //             siteName: "GitHub",
+    //             url: "https://github.com/rp-bot/audio-file-sharing",
+    //         },
+    //     ],
+    // },
+    // {
+    //     title: "Employee & Project Management Full Stack App",
+    //     description:
+    //         "A robust full-stack application designed to streamline workflow by managing employees, projects, and tasks. This comprehensive tool would feature user authentication, role-based access control, and an intuitive dashboard for project tracking.",
+    //     tags: [ "Full Stack", "React", "Node.js", "PostgreSQL" ],
+    //     slug: "employee-project-management-app",
+    //     links: [
+    //         {
+    //             siteName: "GitHub",
+    //             url: "https://github.com/rp-bot/employee-project-management-app",
+    //         },
+    //     ],
+    // },
     {
         title: "Eco Charge",
         description:
@@ -69,7 +69,7 @@ export const featuredProjects = [
         description:
             "A software synthesizer that emulates the warm and rich sounds of a semi-analog paraphonic synthesizer. This project would involve intricate sound design and digital signal processing to capture the nuances of analog hardware.",
         tags: [ "Synthesizer", "DSP", "C++", "JUCE" ],
-        slug: "semi-analog-paraphonic-synth",
+        slug: "paraphonic-synth",
         links: [
             {
                 siteName: "GitHub",
@@ -77,19 +77,19 @@ export const featuredProjects = [
             },
         ],
     },
-    {
-        title: "Teeth Drummer",
-        description:
-            "An unconventional and creative application that uses a microphone to detect the sounds of teeth clicks and translates them into drum beats. This experimental project merges audio analysis with real-time music generation.",
-        tags: [ "Creative Coding", "Web Audio API", "p5.js", "Machine Learning" ],
-        slug: "teeth-drummer",
-        links: [
-            {
-                siteName: "GitHub",
-                url: "https://github.com/rp-bot/teeth-drummer",
-            },
-        ],
-    },
+    // {
+    //     title: "Teeth Drummer",
+    //     description:
+    //         "An unconventional and creative application that uses a microphone to detect the sounds of teeth clicks and translates them into drum beats. This experimental project merges audio analysis with real-time music generation.",
+    //     tags: [ "Creative Coding", "Web Audio API", "p5.js", "Machine Learning" ],
+    //     slug: "teeth-drummer",
+    //     links: [
+    //         {
+    //             siteName: "GitHub",
+    //             url: "https://github.com/rp-bot/teeth-drummer",
+    //         },
+    //     ],
+    // },
     {
         title: "Vision Synth - Hand Gesture Music Interface",
         description:
@@ -116,19 +116,19 @@ export const featuredProjects = [
             },
         ],
     },
-    {
-        title: "Movie Match",
-        description:
-            "A recommendation engine that suggests movies to users based on their viewing history and stated preferences. This project would delve into collaborative filtering and content-based filtering algorithms to provide personalized and accurate movie suggestions.",
-        tags: [ "Recommendation Engine", "Machine Learning", "React", "Node.js" ],
-        slug: "movie-match",
-        links: [
-            {
-                siteName: "GitHub",
-                url: "https://github.com/rp-bot/movie-match",
-            },
-        ],
-    },
+    // {
+    //     title: "Movie Match",
+    //     description:
+    //         "A recommendation engine that suggests movies to users based on their viewing history and stated preferences. This project would delve into collaborative filtering and content-based filtering algorithms to provide personalized and accurate movie suggestions.",
+    //     tags: [ "Recommendation Engine", "Machine Learning", "React", "Node.js" ],
+    //     slug: "movie-match",
+    //     links: [
+    //         {
+    //             siteName: "GitHub",
+    //             url: "https://github.com/rp-bot/movie-match",
+    //         },
+    //     ],
+    // },
     {
         title: "3D Platformer Game",
         description:
