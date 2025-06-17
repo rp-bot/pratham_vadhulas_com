@@ -2,44 +2,7 @@
 
 import { AnimatedWrapper } from "../components/animated-wrapper.component";
 import { ProjectCard } from "../components/project-card.component";
-
-const allProjects = [
-  {
-    title: "Audio Visualizer",
-    description: "A real-time audio visualization tool built with Web Audio API and Canvas.",
-    tags: ["Web Audio API", "Canvas", "JavaScript"],
-    slug: "MIDI-gen-ai",
-  },
-  {
-    title: "Music Production App",
-    description: "A web-based digital audio workstation for music production.",
-    tags: ["React", "Web Audio API", "TypeScript"],
-    slug: "music-production-app",
-  },
-  {
-    title: "Algorithmic Composition",
-    description: "An experimental tool for generating music using algorithmic patterns.",
-    tags: ["Python", "Music Theory", "Machine Learning"],
-    slug: "algorithmic-composition",
-  },
-  // Add more projects as needed
-];
-
-const creativeLabProjects = [
-  {
-    title: "Web Audio Experiments",
-    description: "A collection of experiments with the Web Audio API.",
-    tags: ["Web Audio API", "JavaScript"],
-    slug: "web-audio-experiments",
-  },
-  {
-    title: "Sound Design Tools",
-    description: "A set of tools for sound design and audio processing.",
-    tags: ["Python", "Audio Processing"],
-    slug: "sound-design-tools",
-  },
-  // Add more creative lab projects as needed
-];
+import { featuredProjects } from "@/constants/featured_projects";
 
 export default function Projects() {
   return (
@@ -54,14 +17,14 @@ export default function Projects() {
           </p>
         </AnimatedWrapper>
 
-        {/* Main Projects */}
+        {/* Main Projects - Vertical List */}
         <section className="mb-20">
           <AnimatedWrapper className="mb-12">
             <h2 className="text-2xl font-bold text-gray-900">Featured Work</h2>
           </AnimatedWrapper>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {allProjects.map((project, index) => (
+          <div className="space-y-8">
+            {featuredProjects.map((project, index) => (
               <AnimatedWrapper key={project.slug} delay={index * 0.1}>
                 <ProjectCard {...project} />
               </AnimatedWrapper>
@@ -69,19 +32,18 @@ export default function Projects() {
           </div>
         </section>
 
-        {/* Creative Lab */}
+        {/* Categorized Projects */}
         <section>
           <AnimatedWrapper className="mb-12">
-            <h2 className="text-2xl font-bold text-gray-900">Creative Lab</h2>
-            <p className="text-gray-600 mt-2">Experimental projects and explorations in sound and technology.</p>
+            <h2 className="text-2xl font-bold text-gray-900">Project Categories</h2>
+            <p className="text-gray-600 mt-2">Projects organized by category and status</p>
           </AnimatedWrapper>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {creativeLabProjects.map((project, index) => (
-              <AnimatedWrapper key={project.slug} delay={index * 0.1}>
-                <ProjectCard {...project} />
-              </AnimatedWrapper>
-            ))}
+            {/* Empty state for now */}
+            <div className="bg-gray-50 rounded-lg p-6 border-2 border-dashed border-gray-200">
+              <p className="text-gray-500 text-center">Categories coming soon...</p>
+            </div>
           </div>
         </section>
       </div>
