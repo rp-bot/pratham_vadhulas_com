@@ -3,29 +3,9 @@
 import { TimelineCanvas } from "../components/about-page/TimeLineCanvas";
 import { AnimatedWrapper } from "../components/animated-wrapper.component";
 import { Button } from "../components/button.component";
-import { TimelineEvent } from "../lib/types/timeline";
 import Image from "next/image";
 // import { motion } from "framer-motion";
 
-const timelineEvents: TimelineEvent[] = [
-  {
-    id: "edu-nyu",
-    date: "2020 – 2024",
-    title: "M.A. in Music Technology",
-    institution: "NYU",
-    description: "…",
-    category: "education",
-  },
-
-  {
-    id: "job-audio",
-    date: "2022 – Present",
-    title: "Senior Software Engineer",
-    institution: "Audio Tech Co.",
-    description: "…",
-    category: "career",
-  },
-];
 
 const skills = {
   "Programming Languages": ["JavaScript", "TypeScript", "Python", "C++", "Rust"],
@@ -65,7 +45,7 @@ export default function About() {
         <section className="mb-20 bg-gray-100 p-4 rounded-lg">
           <AnimatedWrapper className="mb-12">
             <h2 className="text-2xl font-bold text-gray-900">Experience & Education</h2>
-            <TimelineCanvas events={timelineEvents} height={600} />
+            <TimelineCanvas  height={600} />
           </AnimatedWrapper>
 
           {/* <div className="space-y-12">

@@ -6,6 +6,6 @@ export interface TimelineEvent {
   date: string;
   title: string;
   institution: string;
-  description: string;
+  description?: string;
   category: Category;
 }
