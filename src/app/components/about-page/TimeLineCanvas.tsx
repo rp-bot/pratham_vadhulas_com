@@ -6,110 +6,110 @@ import { BranchNode } from './BranchNode';
 import { EventLabel } from './EventLabel';
 import { TimelineEvent } from '../../lib/types/timeline';
 
-// Data remains the same
+// Data remains the same, focused on the branch/merge concept.
 const eduData: TimelineEvent[] = [
   {
     id: 'edu-1',
     category: 'education',
-    date: '2018-2022',
-    title: 'B.S. in Computer Science',
-    institution: 'University of Technology',
-  },
-  {
-    id: 'edu-3',
-    category: 'education',
-    date: '2025',
-    title: 'Project Capstone',
-    institution: '',
+    date: 'Year 1',
+    title: 'B.S. in AppliedComputer Science',
+    institution: 'Ivy Tech Community College, Indianapolis',
   },
   {
     id: 'edu-2',
     category: 'education',
-    date: '2025-2027',
-    title: 'Ph.D. in Computational Science',
-    institution: 'Institute of Advanced Studies',
+    date: 'Summer',
+    title: 'Summer Starts',
+    institution: 'Internship opportunity begins',
+  },
+  {
+    id: 'edu-3',
+    category: 'education',
+    date: '',
+    title: 'Summer Ends',
+    institution: 'Return to studies',
   },
 ];
 
-const carData: TimelineEvent[] = [
-  {
-    id: 'car-1',
+const internData: TimelineEvent = {
+    id: 'intern-1',
     category: 'career',
-    date: '2022-2023',
-    title: 'Software Engineer',
+    date: 'Summer',
+    title: 'Software Dev Intern',
     institution: 'Future Systems LLC',
-  },
-  {
-    id: 'car-2',
-    category: 'career',
-    date: '',
-    title: '',
-    institution: '',
-  },
-];
+}
+
 
 interface TimelineCanvasProps {
   height?: number;
 }
 
-export function TimelineCanvas({ height = 600 }: TimelineCanvasProps) {
+export function TimelineCanvas({ height = 500 }: TimelineCanvasProps) {
   const [ref, bounds] = useMeasure();
 
   if (!bounds.width || !height) {
     return <div ref={ref} className="w-full" style={{ height }} />;
   }
   
-  // --- LAYOUT (Unchanged) ---
+  // --- LAYOUT ---
   const margin = { top: 50, bottom: 50, left: 50, right: 50 };
   const availH = height - margin.top - margin.bottom;
-  const xEdu = margin.left;
-  const xCar = bounds.width - margin.right;
-  const ptEdu1: [number, number] = [xEdu, margin.top + availH * 0.9];
-  const ptCar1: [number, number] = [xCar, margin.top + availH * 0.7];
-  const ptCar2: [number, number] = [xCar, margin.top + availH * 0.5];
-  const ptEdu3: [number, number] = [xEdu, margin.top + availH * 0.4];
-  const ptEdu2: [number, number] = [xEdu, margin.top + availH * 0.1];
+  const xMain = margin.left + 100;
+  const xBranch = bounds.width - margin.right - 100;
+
+  // Points for the main education timeline
+  const ptSummerStart: [number, number] = [xMain, margin.top + availH * 0.75];
+  const ptSummerEnd:   [number, number] = [xMain, margin.top + availH * 0.25];
+  // The main start point is positioned relative to the summer start
+  const ptEduStart: [number, number]    = [xMain, ptSummerStart[1] + 60];
+
+  // Calculate the midpoint Y for the internship node
+  const internshipY = (ptSummerStart[1] + ptSummerEnd[1]) / 2;
+  const ptInternship: [number, number] = [xBranch, internshipY];
+
 
   // --- PATHS ---
-  const educationBranchPoints: [number, number][] = [ptEdu1, ptEdu3, ptEdu2];
+  // The main education path is a continuous line
+  const mainEducationPath: [number, number][] = [ ptEduStart, ptSummerStart, ptSummerEnd ];
   
-  // Split the career path into two segments to make the final line a curve.
-  const careerPathPart1: [number, number][] = [ptEdu1, ptCar1, ptCar2];
-  const careerPathPart2_Merge: [number, number][] = [ptCar2, ptEdu3]; // This will be a curve
+  // Split the internship path into two segments to create the cubic curve effect
+  const internshipPath_out: [number, number][] = [ ptSummerStart, ptInternship ];
+  const internshipPath_in: [number, number][] = [ ptInternship, ptSummerEnd ];
 
 
   return (
-    <div ref={ref} className="w-full overflow-auto text-wrap ">
+    <div ref={ref} className="w-1/2 overflow-auto text-wrap ">
       <svg width={bounds.width} height={height} className="font-sans">
         
-        {/* Draw the Education Branch */}
-        <Branch points={educationBranchPoints} color="#3B82F6" />
+        {/* Draw the main education timeline */}
+        <Branch points={mainEducationPath} color="#3B82F6" />
         
-        {/* Draw the Career Branch in two parts */}
-        <Branch points={careerPathPart1} color="#D946EF" />
-        <Branch points={careerPathPart2_Merge} color="#D946EF" /> {/* This now draws a cubic curve */}
+        {/* Draw the internship branch in two parts for the cubic curve style */}
+        <Branch points={internshipPath_out} color="#D946EF" />
+        <Branch points={internshipPath_in} color="#D946EF" />
 
-        {/* --- Render Nodes and Labels (Unchanged) --- */}
+        {/* --- Render Nodes and Labels --- */}
         
-        {/* Education Nodes */}
+        {/* Education Nodes & Labels */}
         <React.Fragment key={eduData[0].id}>
-          <BranchNode x={ptEdu1[0]} y={ptEdu1[1]} color="#3B82F6" radius={8} />
-          <EventLabel x={ptEdu1[0]} y={ptEdu1[1]} event={eduData[0]} align="right" />
+          <BranchNode x={ptEduStart[0]} y={ptEduStart[1]} color="#3B82F6" radius={8} />
+          <EventLabel x={ptEduStart[0]} y={ptEduStart[1]} event={eduData[0]} align="right" />
         </React.Fragment>
-        <React.Fragment key={eduData[2].id}>
-          <BranchNode x={ptEdu2[0]} y={ptEdu2[1]} color="#3B82F6" />
-          <EventLabel x={ptEdu2[0]} y={ptEdu2[1]} event={eduData[2]} align="right" />
+        
+        <React.Fragment key={eduData[1].id}>
+          <BranchNode x={ptSummerStart[0]} y={ptSummerStart[1]} color="#3B82F6" />
+          <EventLabel x={ptSummerStart[0]} y={ptSummerStart[1]} event={eduData[1]} align="right" />
         </React.Fragment>
-        <BranchNode x={ptEdu3[0]} y={ptEdu3[1]} color="#3B82F6" />
 
-        {/* Career Nodes */}
-        <React.Fragment key={carData[0].id}>
-          <BranchNode x={ptCar1[0]} y={ptCar1[1]} color="#D946EF" />
-          <EventLabel x={ptCar1[0]} y={ptCar1[1]} event={carData[0]} align="left" />
+        <React.Fragment key={eduData[2].id}>
+          <BranchNode x={ptSummerEnd[0]} y={ptSummerEnd[1]} color="#3B82F6" />
+          <EventLabel x={ptSummerEnd[0]} y={ptSummerEnd[1]} event={eduData[2]} align="right" />
         </React.Fragment>
-        <React.Fragment key={carData[1].id}>
-          <BranchNode x={ptCar2[0]} y={ptCar2[1]} color="#D946EF" />
-          {/* <EventLabel x={ptCar2[0]} y={ptCar2[1]} event={carData[1]} align="left" /> */}
+
+        {/* Internship Node & Label */}
+        <React.Fragment key={internData.id}>
+          <BranchNode x={ptInternship[0]} y={ptInternship[1]} color="#D946EF" />
+          <EventLabel x={ptInternship[0]} y={ptInternship[1]} event={internData} align="right" />
         </React.Fragment>
       </svg>
     </div>
