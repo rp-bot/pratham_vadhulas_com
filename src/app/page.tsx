@@ -11,7 +11,7 @@ export default function Home() {
       <ProfileSection />
 
       {/* Featured Projects Section */}
-      <section className="py-10 bg-gray-50">
+      <section className="md:py-10 py-6 bg-gray-50">
         <div className="max-w-7xl mx-auto lg:px-8">
           <AnimatedWrapper className="mb-12">
             <h2 className="text-3xl font-bold text-gray-900 text-center">Featured Projects</h2>
