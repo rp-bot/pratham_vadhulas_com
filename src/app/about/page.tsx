@@ -31,6 +31,13 @@ export default function About() {
                   Software engineer and music technologist focused on building innovative audio tools. Combining software development expertise with music
                   theory and audio processing knowledge.
                 </p>
+                <Link
+                  href="/resume.pdf"
+                  target="_blank"
+                  className="hover:bg-blue-500 bg-blue-400 text-white transition-colors rounded-md px-4 py-2 cursor-pointer no-underline"
+                >
+                  Download Resume
+                </Link>
               </div>
             </div>
           </div>
