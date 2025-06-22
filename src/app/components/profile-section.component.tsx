@@ -11,6 +11,8 @@ export const ProfileSection = async () => {
 
   const commitHash = profileRepo?.latestCommit?.hash || "N/A";
   const commitDate = profileRepo?.latestCommit?.date || "N/A";
+  const commitUrl = profileRepo ? `https://github.com/rp-bot/${profileRepo.name}/commit/${commitHash}` : "#";
+
   return (
     <section className="flex items-center justify-center py-16 md:py-20">
       <div className="w-full max-w-4xl px-4">
@@ -23,7 +25,12 @@ export const ProfileSection = async () => {
                   <Image src="/profile_pic.jpg" width={160} height={160} alt="Your Name" />
                 </div>
                 <div className="mt-4 text-center">
-                  <p className="text-sm text-gray-500 font-mono">Commit Hash: #{commitHash}</p>
+                  <p className="text-sm text-gray-500 font-mono ">
+                    Commit Hash:{" "}
+                    <Link href={commitUrl} target="_blank" rel="noopener noreferrer" className="hover:text-indigo-800 hover:underline transition-colors hover:font-bold cursor-pointer">
+                      #{commitHash}
+                    </Link>
+                  </p>
                   <p className="text-xs text-gray-400 font-mono">Commit Date: {commitDate}</p>
                 </div>
               </div>

@@ -1,23 +1,24 @@
 "use client";
 
-import { Github, Linkedin, Mail } from "lucide-react";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { MdEmail } from "react-icons/md";
 import Link from "next/link";
 
 const socialLinks = [
   {
     name: "GitHub",
-    href: "https://github.com/yourusername",
-    icon: Github,
+    href: "https://github.com/rp-bot",
+    icon: FaGithub,
   },
   {
     name: "LinkedIn",
-    href: "https://linkedin.com/in/yourusername",
-    icon: Linkedin,
+    href: "https://linkedin.com/in/pratham-vadhulas",
+    icon: FaLinkedin,
   },
   {
     name: "Email",
-    href: "mailto:your.email@example.com",
-    icon: Mail,
+    href: "mailto:prathamvadhulas@gmail.com",
+    icon: MdEmail,
   },
 ];
 
