@@ -8,10 +8,14 @@ import Image from "next/image";
 // import { motion } from "framer-motion";
 
 const skills = {
-  "Programming Languages": ["JavaScript", "TypeScript", "Python", "C++", "Rust"],
-  "Web Technologies": ["React", "Next.js", "Node.js", "Web Audio API"],
-  "Audio Software": ["Max/MSP", "Pure Data", "Ableton Live", "Pro Tools"],
-  "Tools & Others": ["Git", "Docker", "AWS", "TensorFlow", "DSP"],
+  "Programming Languages": ["Python", "JavaScript", "TypeScript", "Rust", "C++", "Java"],
+  "Programming Paradigms": ["Object-Oriented Programming (OOP)", "Functional Programming", "Event-Driven Programming", "Reactive Programming"],
+  "Frameworks & Technologies": ["Next.js", "React", "Node.js", "PyTorch", "Three.js", "React Native"],
+  "Audio & Music": ["Digital Signal Processing", "JUCE", "Plugin Development", "Max/MSP", "music21"],
+  "Data & Machine Learning": ["Machine Learning", "Transformer Architecture", "CUDA", "GPU Acceleration", "Computer Vision"],
+  "IoT & Hardware": ["Arduino", "Raspberry Pi", "Sensor Integration", "Wi-Fi Communication"],
+  "Infrastructure & DevOps": ["Git", "CI/CD", "Linux", "AWS", "GCP", "Terraform"],
+  "Relevant Coursework": ["Data Structures & Algorithms", "Operating Systems", "Machine Learning", "AI", "Computer Architecture", "Software Engineering"],
 };
 
 export default function About() {
@@ -47,7 +51,9 @@ export default function About() {
         <section className="mb-10 bg-gray-100 p-4 rounded-lg">
           <AnimatedWrapper className="">
             <h2 className="text-2xl font-bold text-gray-900">Experience & Education</h2>
-            <TimelineCanvas height={600} />
+            <div className="bg-gray-100 rounded-lg px-4">
+              <TimelineCanvas height={600} />
+            </div>
           </AnimatedWrapper>
 
           {/* <div className="space-y-12">
@@ -68,15 +74,15 @@ export default function About() {
         </section>
 
         {/* Skills Section */}
-        <section className="mb-10">
+        <section className="mb-10 bg-gray-100 p-4 rounded-lg">
           <AnimatedWrapper className="mb-10">
             <h2 className="text-2xl font-bold text-gray-900">Skills & Expertise</h2>
           </AnimatedWrapper>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 items-stretch">
             {Object.entries(skills).map(([category, items], index) => (
               <AnimatedWrapper key={category} delay={index * 0.1}>
-                <div className="bg-white rounded-lg border border-gray-100 p-6">
+                <div className="bg-white rounded-lg border border-gray-100 p-6 h-full flex flex-col">
                   <h3 className="text-lg font-semibold text-gray-900 mb-4">{category}</h3>
                   <div className="flex flex-wrap gap-2">
                     {items.map((skill) => (
