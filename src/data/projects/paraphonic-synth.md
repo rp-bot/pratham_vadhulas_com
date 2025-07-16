@@ -1,24 +1,28 @@
 ---
 title: "Semi Analog Paraphonic Synth"
 emoji: "🎛️"
-description: "A software synthesizer that emulates the warm and rich sounds of a semi-analog paraphonic synthesizer through intricate digital signal processing."
+description: "A hardware synthesizer built around the Arduino platform, designed to capture the warm and rich sounds of a semi-analog paraphonic synthesizer."
 role: "Audio Software Developer"
 duration: "Jun 2025 - Oct 2025"
 githubUrl: "https://github.com/rp-bot/semi-analog-paraphonic-synth"
 technologies: ["Synthesizer", "DSP", "C++", "JUCE"]
 images:
-  - "/images/placeholder.png"
+  - "/images/paraphonic-synth/1.jpg"
+  - "/images/paraphonic-synth/2.jpg"
+  - "/images/paraphonic-synth/3.jpg"
+  - "/images/paraphonic-synth/4.jpg"
 ---
 
-A software synthesizer that emulates the warm and rich sounds of a semi-analog paraphonic synthesizer. This project involves intricate sound design and digital signal processing to capture the nuances of analog hardware.
+A hardware synthesizer built around the Arduino platform, designed to capture the warm and rich sounds of a semi-analog paraphonic synthesizer. This project combines hands-on electronics, embedded programming, and analog circuit design to recreate the unique sonic character of classic hardware synths.
 
 ### Project Goals
 
-The primary goal was to digitally replicate the character of paraphonic synthesizers, where oscillators can play multiple notes but share a single filter and VCA path. This creates unique harmonic interactions not found in fully polyphonic synths.
+The main objective was to construct a physical paraphonic synthesizer, where multiple notes can be played simultaneously but share a single analog filter and VCA. This approach produces distinctive harmonic textures and interactions, characteristic of vintage paraphonic instruments.
 
 ### Technical Implementation
 
-- **Core Engine:** Developed in C++ for high performance and low-latency audio processing.
-- **DSP Algorithms:** Implemented virtual analog oscillators, filters with non-linear behavior, and envelope generators to model analog circuitry.
-- **Framework:** The JUCE framework was used for creating the plugin's GUI and ensuring cross-platform compatibility (VST, AU, AAX).
-- **Sound Design:** Focused on capturing the subtle imperfections and warmth that give analog synths their desired character.
+- **Microcontroller:** Utilized an Arduino as the central controller for note scanning, envelope generation, and parameter modulation.
+- **Analog Circuits:** Designed and assembled analog oscillator, filter, and VCA circuits using discrete components to achieve authentic analog warmth and non-linearities.
+- **Paraphonic Voice Handling:** Implemented a key scanning matrix and logic to allow multiple notes to trigger the shared analog signal path.
+- **User Interface:** Added tactile controls (knobs, switches) for real-time manipulation of sound parameters, and a simple display for patch information.
+- **Enclosure & Build:** Crafted a custom enclosure to house the electronics, providing a robust and playable instrument for live performance and studio use.

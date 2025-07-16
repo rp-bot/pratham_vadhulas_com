@@ -25,32 +25,7 @@ export const featuredProjects = [
             },
         ],
     },
-    // {
-    //     title: "Audio File Sharing For Mixing Engineers",
-    //     description:
-    //         "A web-based platform tailored for audio professionals to share, comment on, and manage different versions of audio files during the mixing and mastering process. Key features would include lossless audio streaming and time-stamped feedback.",
-    //     tags: [ "Web Application", "React", "Node.js", "AWS S3" ],
-    //     slug: "audio-file-sharing",
-    //     links: [
-    //         {
-    //             siteName: "GitHub",
-    //             url: "https://github.com/rp-bot/audio-file-sharing",
-    //         },
-    //     ],
-    // },
-    // {
-    //     title: "Employee & Project Management Full Stack App",
-    //     description:
-    //         "A robust full-stack application designed to streamline workflow by managing employees, projects, and tasks. This comprehensive tool would feature user authentication, role-based access control, and an intuitive dashboard for project tracking.",
-    //     tags: [ "Full Stack", "React", "Node.js", "PostgreSQL" ],
-    //     slug: "employee-project-management-app",
-    //     links: [
-    //         {
-    //             siteName: "GitHub",
-    //             url: "https://github.com/rp-bot/employee-project-management-app",
-    //         },
-    //     ],
-    // },
+
     {
         title: "Eco Charge",
         description:
@@ -67,7 +42,7 @@ export const featuredProjects = [
     {
         title: "Semi Analog Paraphonic Synth",
         description:
-            "A software synthesizer that emulates the warm and rich sounds of a semi-analog paraphonic synthesizer. This project would involve intricate sound design and digital signal processing to capture the nuances of analog hardware.",
+            "A hardware synthesizer built around the Arduino platform, designed to capture the warm and rich sounds of a semi-analog paraphonic synthesizer. This project combines hands-on electronics, embedded programming, and analog circuit design to recreate the unique sonic character of classic hardware synths.",
         tags: [ "Synthesizer", "DSP", "C++", "JUCE" ],
         slug: "paraphonic-synth",
         links: [
@@ -130,15 +105,15 @@ export const featuredProjects = [
     //     ],
     // },
     {
-        title: "3D Platformer Game",
+        title: "Cube Climber",
         description:
-            "A classic 3D platformer game developed from the ground up, featuring unique level designs, character abilities, and engaging gameplay mechanics. This project demonstrates skills in game design, 3D modeling, and programming with a game engine.",
-        tags: [ "Game Development", "Unity", "C#", "Blender" ],
-        slug: "3d-platformer-game",
+            "A classic 3D platformer game built in Processing 4 (Java), featuring 3D graphics, procedural audio, and unique level designs.",
+        tags: [ "Game Development", "Processing 4", "Java", "3D Graphics", "Procedural Audio" ],
+        slug: "cube-climber",
         links: [
             {
                 siteName: "GitHub",
-                url: "https://github.com/rp-bot/3d-platformer-game",
+                url: "https://github.com/rp-bot/cube-climber",
             },
         ],
     },

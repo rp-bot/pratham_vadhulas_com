@@ -4,11 +4,13 @@ emoji: "🔋"
 description: "A mobile application concept to help users find electric vehicle charging stations powered by renewable energy sources, promoting sustainable transportation."
 role: "UI/UX Designer & Product Strategist"
 duration: "May 2025 - Sep 2025"
-liveUrl: "#"
-githubUrl: ""
+liveUrl: "https://energyhack-2025-hackathon.vercel.app/"
+githubUrl: "https://github.com/rp-bot/Eco-Charge"
 technologies: ["Mobile App", "Sustainability", "UI/UX", "API Integration"]
 images:
-  - "/images/placeholder.png"
+  - "/images/eco-charge/eco-data.jpg"
+  - "/images/eco-charge/winning.jpeg"
+  - "/images/eco-charge/presenting.jpeg"
 ---
 
 Eco Charge is a mobile application concept aimed at promoting sustainable transportation by helping users find and utilize electric vehicle charging stations powered by renewable energy sources.

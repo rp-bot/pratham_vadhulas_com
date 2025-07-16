@@ -7,7 +7,7 @@ duration: "Feb 2025 - Jun 2025"
 githubUrl: "https://github.com/rp-bot/MIDI-gen-ai"
 technologies: ["AI", "Music Theory", "Transformer", "Python"]
 images:
-  - "/images/placeholder.png"
+  - "/images/midi-gen-arch.png"
 ---
 
 MIDI Gen AI is a cutting-edge chord prediction tool, designed using a Transformer neural network architecture. This project is a testament to proficiency in AI, music theory, and programming, hosted as a Google Colab notebook on GitHub.
