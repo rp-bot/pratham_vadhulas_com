@@ -7,7 +7,6 @@ duration: "Dec 2025 - Apr 2026"
 githubUrl: "https://github.com/rp-bot/artificial-reverbs"
 technologies: ["DSP", "Audio Plugins", "C++", "JUCE"]
 images:
-  - "/images/placeholder.png"
 ---
 
 An exploration into digital signal processing to create a suite of artificial reverb effects. This project involves the implementation of various reverb algorithms, such as Schroeder and convolution reverbs, as audio plugins.
@@ -19,6 +18,6 @@ The primary goal was to gain a deep, practical understanding of how reverb algor
 ### Technical Implementation
 
 - **Algorithm Research:** Studied and implemented several foundational reverb algorithms:
-    - **Schroeder Reverb:** Built using a combination of comb filters and all-pass filters to create synthetic reverberation.
-    - **Convolution Reverb:** Implemented a system to load impulse responses (IR) of real spaces and convolve them with an input signal for highly realistic reverb.
+  - **Schroeder Reverb:** Built using a combination of comb filters and all-pass filters to create synthetic reverberation.
+  - **Convolution Reverb:** Implemented a system to load impulse responses (IR) of real spaces and convolve them with an input signal for highly realistic reverb.
 - **Core Technology:** The algorithms were written in C++ for maximum efficiency, with the JUCE framework used to create VST/AU plugins compatible with major DAWs.
