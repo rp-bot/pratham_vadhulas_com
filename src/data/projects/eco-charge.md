@@ -11,6 +11,7 @@ images:
   - "/images/eco-charge/eco-data.jpg"
   - "/images/eco-charge/winning.jpeg"
   - "/images/eco-charge/presenting.jpeg"
+  - "/images/eco-charge/device.png"
 ---
 
 Eco Charge is a mobile application concept aimed at promoting sustainable transportation by helping users find and utilize electric vehicle charging stations powered by renewable energy sources.
