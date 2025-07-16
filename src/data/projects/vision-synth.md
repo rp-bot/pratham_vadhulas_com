@@ -7,7 +7,7 @@ duration: "Aug 2025 - Dec 2025"
 githubUrl: "https://github.com/rp-bot/vision_synth"
 technologies: ["Computer Vision", "YOLO", "Music", "Python"]
 images:
-  - "/images/placeholder.png"
+  - "/images/vision-synth/1.png"
 ---
 
 Vision Synth is an innovative and experimental program that transforms hand movements into musical expressions. It leverages a vision-based neural network with a pretrained YOLO hand detection model to accurately detect hand positions and sizes through a webcam.

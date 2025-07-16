@@ -1,4 +1,3 @@
-import Image from "next/image";
 import ReactMarkdown from "react-markdown";
 import { getProjectDetails } from "../../lib/actions/getProjectDetails";
 import { AnimatedWrapper } from "../../components/animated-wrapper.component";
@@ -51,14 +50,20 @@ export default async function ProjectPage({ params }: { params: { slug: string }
                 rel="noopener noreferrer"
                 className="inline-flex items-center px-4 py-2 rounded-full bg-gray-900 text-white hover:bg-gray-800 transition-colors"
               >
-                View More <ArrowUpRight className="w-4 h-4 ml-2" />
+                <ArrowUpRight className="w-4 h-4 mr-2" />
+                View More
               </Link>
             )}
             {project.liveUrl && (
-              <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="/* your secondary button styles */">
-                {/* <ArrowUpRight className="w-5 h-5 mr-2" /> */}
+              <Link
+                href={project.liveUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center px-4 py-2 rounded-full bg-gray-900 text-white hover:bg-gray-800 transition-colors"
+              >
+                <ArrowUpRight className="w-4 h-4 mr-2" />
                 Live Demo
-              </a>
+              </Link>
             )}
           </div>
         </AnimatedWrapper>
@@ -93,11 +98,11 @@ export default async function ProjectPage({ params }: { params: { slug: string }
           </div>
         </AnimatedWrapper>
 
-        {/* Hero Image */}
-        {project.images && project.images[0] && (
+        {/* Project Gallery (replaces Hero Image) */}
+        {project.images && project.images.length > 0 && (
           <AnimatedWrapper className="mb-16">
-            <div className="relative w-full max-w-3xl mx-auto overflow-hidden  border-2 border-gray-200 rounded-lg p-5">
-              <Image src={project.images[0]} alt={project.title} width={800} height={450} className="w-full h-auto object-contain" priority />
+            <div className="max-w-3xl mx-auto">
+              <ProjectGallery images={project.images} projectTitle={project.title} />
             </div>
           </AnimatedWrapper>
         )}
@@ -108,14 +113,7 @@ export default async function ProjectPage({ params }: { params: { slug: string }
         </div>
 
         {/* Image Gallery */}
-        {project.images && project.images.length > 1 && (
-          <AnimatedWrapper className="mt-16">
-            <h2 className="text-2xl font-bold text-gray-900 mb-8">Gallery</h2>
-            <div className="max-w-3xl mx-auto">
-              <ProjectGallery images={project.images} projectTitle={project.title} />
-            </div>
-          </AnimatedWrapper>
-        )}
+        {/* Removed: The separate gallery section at the bottom, as the gallery is now at the top */}
       </div>
     </main>
   );
