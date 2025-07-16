@@ -172,8 +172,8 @@ export function TimelineCanvas({ height = 800 }: TimelineCanvasProps) {
   const keyEventIdsToLabel = ["edu-1", "edu-6", "edu-7"];
 
   return (
-    <div ref={ref} className="w-full min-w-[360px] overflow-auto text-wrap">
-      <svg width={bounds.width} height={height} className="font-sans">
+    <div ref={ref} className="w-full min-w-[360px] overflow-auto text-wrap ">
+      <svg width={bounds.width} height={height} className="font-sans ">
         {/* Date Labels (Left) */}
         {uniqueLabelData.map(({ y, label }) => (
           <TimelineLabel key={`label-${y}`} x={xLabel} y={y} label={label} />
